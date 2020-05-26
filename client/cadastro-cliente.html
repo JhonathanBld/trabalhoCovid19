@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Empreste Aqui </title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h2 class="titulo-pagina">Empreste Aqui</h2>
+    </div>
+  </header>
+
+  <form id="form-cadastro">
+  <section class="container">
+    <h5> Informações do Caso </h5>
+    <div class="flex wrap">
+    <div class="item w-50">
+      <label for="nome">Nome Completo:</label>
+      <input id="nome" name="nome" type="text" class="campo">
+    </div>
+    <br>
+    <div class="item w-50">
+      <label for="email">Email:</label>
+      <input id="email" type="text">
+    </div>
+    <div class="item w-33">
+      <label for="telefone">Telefone:</label>
+      <input id="telefone" type="text">
+    </div>
+    <div class="item w-33">
+      <label for="dtnasc">Data de Nascimento:</label>
+      <input id="dtnasc" name="dtnasc" type="date">
+    </div>
+    <div class="item w-33">
+      <label for="renda">Renda Mensal Bruta:</label>
+      <input id="renda" type="number">
+    </div>
+    <div class="grupo">
+      <label for="sexo">Sexo:</label>
+      <div class="radio-button">
+        <input id="sexo" name="sexo" type="radio" value="M"><label class="label">Masculino</label>
+      </div>
+      <div class="radio-button">
+        <input id="sexo" name="sexo" type="radio" value="F"><label class="label">Feminino</label>
+      </div>
+    </div>
+    <div class="grupo">
+      <label for="estado-civil">Estado Civil:</label>
+      <div class="radio-button">
+        <input id="estadocivil" name="estadocivil" type="radio" value="S"><label
+          class="label">Solteiro</label>
+      </div>
+      <div class="radio-button">
+        <input id="estadocivil" name="estadocivil" type="radio" value="C"><label
+          class="label">Casado</label>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="container">
+    <h5> Informações de Endereço </h5>
+    <div class="flex wrap">
+    <div class="item w-33">
+      <label for="cidade">Cidade:</label>
+      <input id="cidade" type="text">
+    </div>
+    <div class="item w-33">
+      <label for="cidade">Cidade:</label>
+      <input id="cidade" type="text">
+    </div>
+    <div class="item w-33">
+      <label for="bairro">Bairro:</label>
+      <input id="bairro" type="text">
+    </div>
+    <div class="item w-33">
+      <label for="endereco">Endereço:</label>
+      <input id="endereco" type="text">
+    </div>
+    <div class="item w-33">
+      <label for="numero">Numero:</label>
+      <input id="numero" type="text">
+    </div>
+    <div class="item w-33">
+      <label for="estado">Estado:</label>
+      <select class="campo campo-medio estado" id="estado">
+        <option value="">Selecione</option>
+        <option value="AC">AC</option>
+        <option value="AL">AL</option>
+        <option value="AP">AP</option>
+        <option value="AM">AM</option>
+        <option value="BA">BA</option>
+        <option value="CE">CE</option>
+        <option value="DF">DF</option>
+        <option value="ES">ES</option>
+        <option value="GO">GO</option>
+        <option value="MA">MA</option>
+        <option value="MS">MS</option>
+        <option value="MT">MT</option>
+        <option value="MG">MG</option>
+        <option value="PA">PA</option>
+        <option value="PB">PB</option>
+        <option value="PR">PR</option>
+        <option value="PE">PE</option>
+        <option value="PI">PI</option>
+        <option value="RJ">RJ</option>
+        <option value="RN">RN</option>
+        <option value="RS">RS</option>
+        <option value="RO">RO</option>
+        <option value="RR">RR</option>
+        <option value="SC">SC</option>
+        <option value="SP">SP</option>
+        <option value="SE">SE</option>
+        <option value="TO">TO</option>
+      </select>
+    </div>
+  </div>
+  <ul id="mensagens-erro"></ul>
+  <button class="botao bto-principal" id="cadastrar">Cadastrar-se</button>
+  </section>
+</form>
+
+</body>
+
+
+<script src="js/form.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,900&display=swap" rel="stylesheet">
+
+</html>

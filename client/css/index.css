@@ -1,0 +1,161 @@
+*{
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif !important;
+ }
+
+body{
+	font-size: 14px;
+	background-color: #f4f4f4;
+}
+
+header{
+	background-image: linear-gradient(#af7602, #ffbb00);
+	height: 50px;
+	color: #FFF;
+}
+
+header h2 {
+	font-size: 18px;
+}
+
+header .container{
+	display: flex;
+	align-items: center;
+}
+
+h5 {
+	font-size: 24px;
+	padding: 12px;
+}
+
+button{
+	padding: .5em 2em;
+    border: 0;
+    border-bottom: 3px solid;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0;
+    margin-top: -3px;
+    color: #fff;
+    background-color: #ffab00;
+    width: 20%;
+    display: block;
+    border-radius: 25px;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+
+.container{
+	max-width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.row {
+	flex-direction: row;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.flex {
+	display: flex;
+}
+
+.item {
+	margin: 5px;
+	text-align: center;
+} 
+
+.w-50 {
+	flex-basis: calc(50% - 10px); 
+}
+
+.w-33 {
+	flex-basis: calc(33% - 10px); 
+}
+
+section {
+	margin: 2em 0;
+	overflow: hidden;
+}
+
+section h2, h3 {
+	font-size: 3em;
+	display: block;
+	padding-bottom: .5em;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: .5em;
+}
+
+td, th {
+	padding: .7em;
+	margin: 0;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+th{
+	font-weight: bold;
+	background-color: #EEE;
+}
+
+label{
+	color: #777777;
+	display: block;
+	margin-bottom: .1em;
+	font-weight: bold;
+	text-align: left;
+}
+
+input, select {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+	width: 100%;
+	display: inline-block;
+	border-radius: 16px;
+}
+
+.grupo{
+	width: 33%;
+	padding: 10px;	
+} 
+
+.radio-button input {
+	width: 15px;
+	height: 15px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.label {
+	display: inline;
+	margin-left: 10px;
+	position: absolute;
+	padding-top: 5px;
+}
+
+#mensagens-erro{
+	color: red;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 24px;
+  }
+
+  
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 16px;
+  }
+  

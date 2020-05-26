@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Covid-19 Casos</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h2 class="titulo-pagina">Cadastro de Casos de Covid-19</h2>
+    </div>
+  </header>
+
+  <section class="container">
+    <h5> Informações de Caso </h5>
+    <div class="flex wrap">
+      <div class="item w-33">
+        <label for="estado">Estado:</label>
+        <select class="campo campo-medio estado" id="estado">
+          <option value="">Selecione</option>
+          <option value="AC">AC</option>
+          <option value="AL">AL</option>
+          <option value="AP">AP</option>
+          <option value="AM">AM</option>
+          <option value="BA">BA</option>
+          <option value="CE">CE</option>
+          <option value="DF">DF</option>
+          <option value="ES">ES</option>
+          <option value="GO">GO</option>
+          <option value="MA">MA</option>
+          <option value="MS">MS</option>
+          <option value="MT">MT</option>
+          <option value="MG">MG</option>
+          <option value="PA">PA</option>
+          <option value="PB">PB</option>
+          <option value="PR">PR</option>
+          <option value="PE">PE</option>
+          <option value="PI">PI</option>
+          <option value="RJ">RJ</option>
+          <option value="RN">RN</option>
+          <option value="RS">RS</option>
+          <option value="RO">RO</option>
+          <option value="RR">RR</option>
+          <option value="SC">SC</option>
+          <option value="SP">SP</option>
+          <option value="SE">SE</option>
+          <option value="TO">TO</option>
+        </select>
+      </div>
+    <div class="item w-33">
+      <label for="cidade">Cidade:</label>
+      <input id="cidade" type="text">
+    </div>
+    <div class="item w-33">
+      <label for="status">Status do caso:</label>
+      <select class="campo campo-medio status" id="status">
+        <option value="">Selecione</option>
+        <option value="O">Óbito</option>
+        <option value="R">Recuperado</option>
+        <option value="S">Suspeito</option>
+        <option value="Q">Quarentena</option>
+        <option value="C">Confirmado</option>
+      </select>
+    </div>
+  </div>
+  <ul id="mensagens-erro"></ul>
+  <button class="botao bto-principal" id="cadastrar">Cadastrar</button>
+  </section>
+</form>
+
+</body>
+
+<script src="js/form.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,900&display=swap" rel="stylesheet">
+
+</html>
