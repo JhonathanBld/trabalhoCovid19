@@ -180,7 +180,7 @@ li {
 }
 
 .container img {
-    display: inline-block;
+    padding: 20px;
 }
 
 @-webkit-keyframes header-animation {
