@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Covid-19 Casos</title>
+    <link href="../css/reset.css" rel="stylesheet" type="text/css">
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <h2 class="titulo-pagina">Cadastro de Casos de Covid-19</h2>
+    </div>
+</header>
+<form name="casos" onsubmit="return false">
+    <section class="container">
+        <h5> Informações de Caso </h5>
+        <div class="flex wrap">
+            <div class="item w-33">
+                <label for="estados">Estado:</label>
+                <select id="estados" onchange="buscarCidadesUF()" required>
+                </select>
+            </div>
+            <div class="item w-33">
+                <label for="cidades-by-uf">Cidade:</label>
+                <select id="cidades-by-uf" required>
+                </select>
+            </div>
+            <div class="item w-33">
+                <label for="status">Status do caso:</label>
+                <select class="campo campo-medio status" id="status">
+                    <option value="">Selecione</option>
+                    <option value="O">Óbito</option>
+                    <option value="R">Recuperado</option>
+                    <option value="S">Suspeito</option>
+                    <option value="Q">Quarentena</option>
+                    <option value="C">Confirmado</option>
+                </select>
+            </div>
+            <div class="w-100">
+                <label for="story">Informações sobre o caso:</label>
+
+                <textarea class="w-100" placeholder="Tem coriza, febre etc.." id="story"  name="story" rows="10"></textarea>
+
+            </div>
+        </div>
+        <ul id="mensagens-erro"></ul>
+        <button class="botao bto-principal" id="cadastrar" onclick="cadastrarCaso()">Cadastrar</button>
+    </section>
+</form>
+
+</body>
+
+<script src="../js/cadastro.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,900&display=swap" rel="stylesheet">
+
+</html>
