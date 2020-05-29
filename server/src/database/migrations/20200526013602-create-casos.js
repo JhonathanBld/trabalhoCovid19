@@ -1,38 +1,45 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('casos', {
-      id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false,
-      },
-      cidade: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      uf : {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      quantidade_pessoas : {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      created_at: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
-      updated_at: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      }
-    });
-  },
+    up: (queryInterface, Sequelize) => {
+        return queryInterface.createTable('casos', {
+            id: {
+                type: Sequelize.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull: false,
+            },
+            id_cidade: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+            },
+            id_estado: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+            },
+            descricao: {
+                type: Sequelize.STRING,
+                allowNull: false,
+            },
+            tipo: {
+                type: Sequelize.ENUM,
+                values: ['OBITO', 'RECUPERADO', 'SUSPEITO', 'CONFIRMADO'],
+                defaultValue: 'SUSPEITO'
+            },
+            created_at: {
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW
+            },
+            updated_at: {
+                type: Sequelize.DATE,
+                allowNull: false,
+                defaultValue: Sequelize.NOW
+            }
+        });
+    },
 
-  down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('casos');
-  }
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.dropTable('casos');
+    }
 };

@@ -7,7 +7,4 @@ const connection = new Sequelize(dbconfig);
 
 Casos.init(connection);
 
-
-Casos.acociate(connection.models);
-
 module.exports = connection;
