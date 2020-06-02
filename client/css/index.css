@@ -63,6 +63,10 @@ button {
     text-decoration: none;
 }
 
+.text-right {
+    text-align: right !important;
+}
+
 .container a:hover {
     color: #C78C19;
 }

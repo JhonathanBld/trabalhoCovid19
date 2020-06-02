@@ -9,6 +9,7 @@ module.exports = {
                 group: ['id_estado', 'id_cidade', 'tipo'],
                 attributes: ['id_estado', 'id_cidade', 'tipo', [sequelize.fn('COUNT', '*'), 'quantidade']]
             });
+
             return res.status(200).json(response);
         } catch (err) {
             return res.status(500).json(err);
@@ -17,11 +18,8 @@ module.exports = {
 
     async create(req, res) {
         // cria o caso
-        const {id_estado, id_cidade, tipo, descricao} = req.body;
         try {
-            let response = await Casos.create({
-                id_cidade, id_estado, tipo, descricao
-            });
+            let response = await Casos.create(req.body);
             res.status(200).json(response);
         } catch (err) {
             res.status(500).json(err);

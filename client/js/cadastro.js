@@ -1,7 +1,7 @@
 buscaEstados();
 
 async function cadastrarCaso()  {
-
+    console.log('ss')
 }
 
 async function buscaEstados() {
