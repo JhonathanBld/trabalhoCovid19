@@ -1,41 +1,23 @@
-buscaEstados();
+async function cadastrarCaso() {
+    let dados = {
+        estado: document.getElementById("estados").value,
+        cidade: document.getElementById("cidade").value,
+        descricao: document.getElementById("descricao").value,
+        status: document.getElementById("status").value,
+    };
 
-async function cadastrarCaso()  {
-    console.log('ss')
-}
+    console.log(dados);
 
-async function buscaEstados() {
-    try {
-        const xmlHttp = new XMLHttpRequest();
-        await xmlHttp.open("GET", 'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome', false);
-        xmlHttp.send(null);
-        let response = JSON.parse(xmlHttp.responseText);
 
-        let estados = document.getElementById("estados");
-        for (index in response) {
-            estados.options[estados.options.length] = new Option(response[index]['nome'], response[index]['sigla']);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'http://localhost:3333/api/casos', true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(json.email + ", " + json.password);
         }
-
-    } catch (err) {
-        alert('Erro')
-    }
-}
-
-async function buscarCidadesUF() {
-    let uf = document.getElementById("estados").value;
-
-    try {
-        const xmlHttp = new XMLHttpRequest();
-        await xmlHttp.open("GET", `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios?orderBy=nome`, false);
-        xmlHttp.send(null);
-        let response = JSON.parse(xmlHttp.responseText);
-
-        var cidade = document.getElementById("cidades-by-uf");
-        for (index in response) {
-            cidade.options[cidade.options.length] = new Option(response[index]['nome'], response[index]['sigla']);
-        }
-
-    } catch (err) {
-        alert('Erro')
-    }
+    };
+    var data = JSON.stringify({"email": "hey@mail.com", "password": "101010"});
+    xhr.send(data);
 }

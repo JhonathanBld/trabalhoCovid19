@@ -17,6 +17,7 @@ module.exports = {
     },
 
     async create(req, res) {
+        console.log(req)
         // cria o caso
         try {
             let response = await Casos.create(req.body);

@@ -9,12 +9,12 @@ module.exports = {
                 autoIncrement: true,
                 allowNull: false,
             },
-            id_cidade: {
-                type: Sequelize.INTEGER,
+            cidade: {
+                type: Sequelize.STRING,
                 allowNull: false,
             },
-            id_estado: {
-                type: Sequelize.INTEGER,
+            estado: {
+                type: Sequelize.STRING,
                 allowNull: false,
             },
             descricao: {
