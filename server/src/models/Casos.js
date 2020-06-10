@@ -3,8 +3,8 @@ const {Model , DataTypes } = require('sequelize');
 class Casos extends Model {
     static init(sequelize) {
         super.init({
-            id_cidade : DataTypes.INTEGER,
-            id_estado : DataTypes.INTEGER,
+            cidade : DataTypes.STRING,
+            estado : DataTypes.STRING,
             tipo : DataTypes.INTEGER,
             descricao : DataTypes.STRING,
         }, {
