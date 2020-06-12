@@ -17,12 +17,12 @@ module.exports = {
     },
 
     async create(req, res) {
-        console.log(req)
         // cria o caso
         try {
             let response = await Casos.create(req.body);
             res.status(200).json(response);
         } catch (err) {
+            console.log(err)
             res.status(500).json(err);
         }
     }
