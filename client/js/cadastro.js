@@ -13,8 +13,6 @@ async function cadastrarCaso() {
             xhr.send(JSON.stringify(dados));
             alert('Dados cadastrados com sucesso!');
             document.getElementById("form-casos").reset();
-        } else {
-            alert('Campos obrigatórios não informados.')
         }
     } catch (err) {
         alert('Ops, ocorreu um erro com a conexão.');

@@ -40,16 +40,20 @@ async function buscarCidadesUF() {
 
 async function buscarCasos() {
     try {
-        let criteiro = {
-            estado: document.getElementById("estados").value,
-            status: document.getElementById("status").value,
-        };
-        const xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", `http://localhost:3333/api/casos?estado=${criteiro.estado}&status=${criteiro.status}`, false);
-        xmlHttp.send(null);
-        JSON.parse(xmlHttp.responseText).forEach(caso => {
-            adicionarCasoNaTabela(caso);
-        });
+        if (document.getElementById("form-consulta").checkValidity()) {
+            let criteiro = {
+                estado: document.getElementById("estados").value,
+                status: document.getElementById("status").value,
+            };
+            const xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", `http://localhost:3333/api/casos?estado=${criteiro.estado}&status=${criteiro.status}`, false);
+            xmlHttp.send(null);
+            JSON.parse(xmlHttp.responseText).forEach(caso => {
+                adicionarCasoNaTabela(caso);
+            });
+        } else {
+
+        }
     } catch (err) {
         alert('Erro ao conectar-se com a API');
     }
