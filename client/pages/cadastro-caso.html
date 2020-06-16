@@ -39,18 +39,17 @@
             </div>
             <div class="item w-33">
                 <label for="status">Status do caso:</label>
-                <select class="campo campo-medio status" id="status">
-                    <option value="">Selecione</option>
-                    <option value="O">Óbito</option>
-                    <option value="R">Recuperado</option>
-                    <option value="S">Suspeito</option>
-                    <option value="C">Confirmado</option>
+                <select class="campo campo-medio status" id="tipo" required>
+                    <option value="OBITO">Óbito</option>
+                    <option value="RECUPERADO">Recuperado</option>
+                    <option value="SUSPEITO">Suspeito</option>
+                    <option value="CONFIRMADO">Confirmado</option>
                 </select>
             </div>
             <div class="w-100">
                 <label for="descricao">Informações sobre o caso:</label>
 
-                <textarea class="w-100" id="descricao" name="descricao" placeholder="Tem coriza, febre etc.."
+                <textarea required class="w-100" id="descricao" name="descricao" placeholder="Tem coriza, febre etc.."
                           rows="10"></textarea>
 
             </div>

@@ -39,22 +39,22 @@ async function buscarCidadesUF() {
 }
 
 async function buscarCasos() {
+    event.preventDefault();
     try {
         if (document.getElementById("form-consulta").checkValidity()) {
             let criteiro = {
-                estado: document.getElementById("estados").value,
-                status: document.getElementById("status").value,
+                estado: document.getElementById("estados").value
             };
             const xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", `http://localhost:3333/api/casos?estado=${criteiro.estado}&status=${criteiro.status}`, false);
+            xmlHttp.open("GET", `http://localhost:3333/api/casos?estado=${criteiro.estado}`, false);
             xmlHttp.send(null);
-            JSON.parse(xmlHttp.responseText).forEach(caso => {
+            const casos = JSON.parse(xmlHttp.responseText);
+            casos.forEach(caso => {
                 adicionarCasoNaTabela(caso);
             });
-        } else {
-
         }
     } catch (err) {
+        console.log(err)
         alert('Erro ao conectar-se com a API');
     }
 }

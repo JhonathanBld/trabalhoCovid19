@@ -5,7 +5,7 @@ async function cadastrarCaso() {
                 estado: document.getElementById("estados").value,
                 cidade: document.getElementById("cidade").value,
                 descricao: document.getElementById("descricao").value,
-                status: document.getElementById("status").value,
+                tipo: document.getElementById("tipo").value,
             };
             const xhr = new window.XMLHttpRequest();
             xhr.open('POST', 'http://localhost:3333/api/casos', true)

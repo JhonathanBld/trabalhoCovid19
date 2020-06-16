@@ -1,17 +1,16 @@
 const Casos = require('../models/Casos');
 const sequelize = require('sequelize');
+const Op = require('sequelize');
 
 module.exports = {
     async getByCount(req, res, next) {
-
         try {
             // Consulta com count por tipo de status, agrupada por estado, cidade e tipo
             let response = await Casos.findAll({
                 group: ['estado', 'cidade', 'tipo'],
                 attributes: ['estado', 'cidade', 'tipo', [sequelize.fn('count', sequelize.col('tipo')), 'quantidade']],
-                where : {
-                    estado : req.query.estado ? req.query.estado : null,
-                    tipo : req.query.status ? req.query.status : null,
+                where: {
+                    estado:  req.query.estado
                 }
             });
             return res.status(200).json(response);
