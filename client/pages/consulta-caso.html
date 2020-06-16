@@ -20,25 +20,53 @@
 </header>
 
 <body>
-    <section class="container">
-        <h3>Casos Covid-19</h3>
-        <table id="tabela-casos">
-            <thead>
-                <tr>
-                    <th>Estado</th>
-                    <th>Cidade</th>
-                </tr>
-            </thead>
-            <tbody id="tabela-cidades">
-                <tr class="cidades" id="cidade-teste">
-                    <td class="info-estado">Teste</td>
-                    <td class="info-cidade">Teste</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+<section class="container">
+    <h3>Casos Covid-19</h3>
+
+    <form>
+        <section class="row">
+            <section class="w-50">
+                <label for="status">Status do caso:</label>
+                <select class="campo campo-medio status" id="status" required>
+                    <option value="">Selecione</option>
+                    <option value="OBITO">Óbito</option>
+                    <option value="RECUPERADO">Recuperado</option>
+                    <option value="SUSPEITO">Suspeito</option>
+                    <option value="CONFIRMADO">Confirmado</option>
+                </select>
+            </section>
+
+            <section class="w-50">
+                <label for="estados"> Estados: </label>
+                <select id="estados" required>
+                    <option value="">Selecione</option>
+                </select>
+            </section>
+
+            <section class="100">
+                <button onclick="buscarCasos()"> Buscar</button>
+            </section>
+        </section>
+    </form>
+
+    <table id="tabela-casos">
+        <thead>
+        <tr>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th>Tipo</th>
+            <th>Quantidade</th>
+        </tr>
+        </thead>
+        <tbody id="tabela-cidades">
+        <tr class="cidades" id="cidade-teste">
+        </tr>
+        </tbody>
+    </table>
+</section>
 </body>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,900&display=swap" rel="stylesheet">
+<script src="../js/consultas.js"></script>
 
 </html>

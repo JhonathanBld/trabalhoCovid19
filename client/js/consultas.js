@@ -1,5 +1,4 @@
 buscaEstados();
-buscarCasos();
 
 async function buscaEstados() {
     try {
@@ -9,12 +8,13 @@ async function buscaEstados() {
         let response = JSON.parse(xmlHttp.responseText);
 
         let estados = document.getElementById("estados");
-        for (index in response) {
-            estados.options[estados.options.length] = new Option(response[index]['nome'], response[index]['sigla']);
+        if (estados) {
+            for (index in response) {
+                estados.options[estados.options.length] = new Option(response[index]['nome'], response[index]['sigla']);
+            }
         }
-
     } catch (err) {
-        alert('Erro');
+        alert('Erro estados');
     }
 }
 
@@ -34,16 +34,20 @@ async function buscarCidadesUF() {
         }
 
     } catch (err) {
-        alert('Erro')
+        alert('Erro cidade')
     }
 }
 
 async function buscarCasos() {
     try {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", 'http://localhost:3333/api/casos', false);
+        let criteiro = {
+            estado: document.getElementById("estados").value,
+            status: document.getElementById("status").value,
+        };
+        const xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", `http://localhost:3333/api/casos?estado=${criteiro.estado}&status=${criteiro.status}`, false);
         xmlHttp.send(null);
-        JSON.parse(xmlHttp.response).forEach(caso => {
+        JSON.parse(xmlHttp.responseText).forEach(caso => {
             adicionarCasoNaTabela(caso);
         });
     } catch (err) {
@@ -51,7 +55,7 @@ async function buscarCasos() {
     }
 }
 
-function adicionarCasoNaTabela() {
+function adicionarCasoNaTabela(caso) {
     let casoTr = montaLinha(caso);
     let tabela = document.querySelector("#tabela-casos");
     tabela.appendChild(casoTr);
@@ -60,8 +64,10 @@ function adicionarCasoNaTabela() {
 function montaLinha(caso) {
     let casoTr = document.createElement("tr");
     casoTr.classList.add("caso");
-    casoTr.appendChild(montarColuna(caso.estado, "descricao"));
-    casoTr.appendChild(montarColuna(caso.cidade, "meses"));
+    casoTr.appendChild(montarColuna(caso.estado, "estado"));
+    casoTr.appendChild(montarColuna(caso.cidade, "cidade"));
+    casoTr.appendChild(montarColuna(caso.tipo, "tipo"));
+    casoTr.appendChild(montarColuna(caso.quantidade, "quantidade"));
     return casoTr;
 }
 

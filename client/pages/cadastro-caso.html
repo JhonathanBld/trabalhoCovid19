@@ -21,42 +21,44 @@
 
 <body>
 
-    <form name="casos" id="form-casos" onsubmit="return false">
-        <section class="container">
-            <h5> Informações de Caso </h5>
-            <div class="flex wrap">
-                <div class="item w-33">
-                    <label for="estados">Estado:</label>
-                    <select id="estados" onchange="buscarCidadesUF()" required>
+<form id="form-casos" name="casos" onsubmit="return false">
+    <section class="container">
+        <h5> Informações de Caso </h5>
+        <div class="flex wrap">
+            <div class="item w-33">
+                <label for="estados">Estado:</label>
+                <select id="estados" onchange="buscarCidadesUF()" required>
+                    <option value=""> Selecione </option>
                 </select>
-                </div>
-                <div class="item w-33">
-                    <label for="cidade">Cidade:</label>
-                    <select id="cidade" required>
+            </div>
+            <div class="item w-33">
+                <label for="cidade">Cidade:</label>
+                <select id="cidade" required>
+                    <option value=""> Selecione </option>
                 </select>
-                </div>
-                <div class="item w-33">
-                    <label for="status">Status do caso:</label>
-                    <select class="campo campo-medio status" id="status">
+            </div>
+            <div class="item w-33">
+                <label for="status">Status do caso:</label>
+                <select class="campo campo-medio status" id="status">
                     <option value="">Selecione</option>
                     <option value="O">Óbito</option>
                     <option value="R">Recuperado</option>
                     <option value="S">Suspeito</option>
-                    <option value="Q">Quarentena</option>
                     <option value="C">Confirmado</option>
                 </select>
-                </div>
-                <div class="w-100">
-                    <label for="descricao">Informações sobre o caso:</label>
-
-                    <textarea class="w-100" placeholder="Tem coriza, febre etc.." id="descricao" name="descricao" rows="10"></textarea>
-
-                </div>
             </div>
-            <ul id="mensagens-erro"></ul>
-            <button class="botao bto-principal" id="cadastrar" onclick="cadastrarCaso()">Cadastrar</button>
-        </section>
-    </form>
+            <div class="w-100">
+                <label for="descricao">Informações sobre o caso:</label>
+
+                <textarea class="w-100" id="descricao" name="descricao" placeholder="Tem coriza, febre etc.."
+                          rows="10"></textarea>
+
+            </div>
+        </div>
+        <ul id="mensagens-erro"></ul>
+        <button class="botao bto-principal" id="cadastrar" onclick="cadastrarCaso()">Cadastrar</button>
+    </section>
+</form>
 
 </body>
 
